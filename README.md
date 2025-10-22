@@ -4,13 +4,14 @@ A minimal Retrieval-Augmented Generation pipeline built from scratch in Python
 
 ## Project Structure
 
+```text
 RAG-v1/
 ├── rag_local.py               # CLI entry point
 ├── data/
 │   └── corpus/                # Your markdown/text documents
 ├── src/
 │   ├── llm/
-│   │   └── client.py            # Ollama chat wrapper
+│   │   └── client.py          # Ollama chat wrapper
 │   ├── rag/
 │   │   ├── indexer.py         # Build / update Chroma index
 │   │   ├── retriever.py       # Search similar chunks
@@ -28,15 +29,15 @@ RAG-v1/
 └── README.md
 
 ## Workflow
-# Split Markdown files, embed them, and store in ChromaDB:
+### Split Markdown files, embed them, and store in ChromaDB:
 
 python rag_local.py --index data/corpus
 
-# Query the index and get grounded answers:
+### Query the index and get grounded answers:
 
 python rag_local.py --query "What is an embedding?" --k 3
 
-# Example output
+### Example output
 
 An embedding, as described in the notes provided ([1] Embeddings), involves converting text into numerical vectors to capture semantic meaning—similar texts yield similar vector representations [2]. This process facilitates tasks like similarity search where relationships between different pieces of text can be assessed quantitatively.
 
