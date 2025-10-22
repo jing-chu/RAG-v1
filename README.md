@@ -27,6 +27,7 @@ RAG-v1/
 ├── .chroma/                   # Local ChromaDB storage
 ├── .gitignore
 └── README.md
+```
 
 ## Workflow
 ### Split Markdown files, embed them, and store in ChromaDB:
