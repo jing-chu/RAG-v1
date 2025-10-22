@@ -1,9 +1,8 @@
 from pathlib import Path
 import re
 
-def split_markdown(text, max_chars=1200, overlap=120):
+def split_markdown(text, max_chars=400, overlap=40):
     blocks = re.split(r"\n(?=# )|\n(?=## )|\n\s*\n", text)
-    print(f"Blocks: {blocks}")
     chunks = []
     buf = ""
     for b in blocks:
@@ -19,7 +18,6 @@ def split_markdown(text, max_chars=1200, overlap=120):
             tail = buf[-overlap:] if buf else ""
             buf = (tail + "\n" + b).strip()
     if buf: chunks.append(buf)
-    print(f"Chunks: {chunks}")
     return chunks
 
     
